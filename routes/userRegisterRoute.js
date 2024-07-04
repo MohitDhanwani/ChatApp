@@ -39,12 +39,10 @@ route.post('/user/login' , async(req,res) => {
     res.status(200).json({ userID: loggedUser._id });
 })
 
-route.get('/logout' , (req , res) => {
-
-
-    res.clearCookie('LoginCookie' , '');
-    res.status(200).send("LogOut success!!")
-})
+route.get('/logout', (req, res) => {
+    res.clearCookie('LoginCookie', { path: '/' });
+    res.status(200).send("LogOut success!!");
+});
 
 route.get('/user', checkAuth , (req ,res) => {
     res.send("working")
