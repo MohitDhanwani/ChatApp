@@ -24,11 +24,12 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors({
-  origin: "https://chathub-silk.vercel.app/",
+const corsOptions = {
+  origin: 'https://chathub-silk.vercel.app', 
   credentials: true,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-}));
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+};
+app.use(cors(corsOptions));
 
 app.use("/register", UserRegisterRoutes);
 app.use('/user', chatRoute);
