@@ -8,7 +8,7 @@ const cors = require('cors');
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 const path = require('path');
-const socketAuth = require('./middleware/socketAuth');
+const socketAuth = require('./middleware/SocketAuth.js');
 const createMessageModel = require('./models/Message.js');
 require('dotenv').config()
 
