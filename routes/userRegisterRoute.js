@@ -33,7 +33,7 @@ route.post('/user/login' , async(req,res) => {
     res.cookie("LoginCookie", jwtToken , {
         httpOnly: true,
         sameSite: 'None', 
-        secure: false 
+        secure: true 
     });
 
     res.status(200).json({ userID: loggedUser._id });
